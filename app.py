@@ -1,10 +1,7 @@
-DEFAULT_TAX_RATE = 0.15
-
-
-# Example 1: Hidden dependency
-def calculate_total(price, quantity):
+# Example 1: Add Parameter
+def calculate_total(price, quantity, tax_rate):
     subtotal = price * quantity
-    tax = subtotal * DEFAULT_TAX_RATE
+    tax = subtotal * tax_rate
     return subtotal + tax
 
 
@@ -19,7 +16,7 @@ def do_stuff(price, discount):
 
 
 # Main program
-total = calculate_total(100, 2)
+total = calculate_total(100, 2, 0.15)
 invoice = create_invoice("Rahim", 101, total)
 final_price = do_stuff(1000, 0.10)
 
